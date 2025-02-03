@@ -33,6 +33,7 @@ function moveMissile() {
             requestAnimationFrame(moveMissile); // Continue movement
         } else {
             projectParams.active = false; // Deactivate when out of bounds
+			update();
         }
     }
 }
