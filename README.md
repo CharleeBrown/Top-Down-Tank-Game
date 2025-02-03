@@ -1,4 +1,4 @@
-# Basic Topdown Game
+# Top Down Tank Game
 
 I have always been interested in gaming, and I wanted to try my hand at making one.
 This is the Basic Topdown Shooter game. 
