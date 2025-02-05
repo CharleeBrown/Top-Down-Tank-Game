@@ -9,8 +9,10 @@ const enemies = []; // Stores enemy objects
 
 // Function to initialize game
 function init() {
-    createEnemies();
+    
+	createEnemies();
     update();
+	
 }
 
 // Function to update and redraw the canvas
