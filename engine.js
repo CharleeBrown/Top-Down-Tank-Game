@@ -54,10 +54,11 @@ function moveMissile() {
 
 // Function to create enemies **once** and store them
 function createEnemies() {
-    for (let i = 0; i < 10; i++) {
-        let x = Math.floor(params.x + Math.random() * (c.width - params.x));
-        let y = Math.floor(params.y - Math.random() * (params.y)); // Keep enemies above player
+    for (let i = 0; i < 5; i++) {
         let size = 20; // Enemy size
+        let x = Math.floor((params.x -5)+ Math.random() * (c.width - params.x)-size);
+        let y = Math.floor(params.y +Math.random() * (c.height-params.y) - size); // Keep enemies above player
+       
         enemies.push({ x, y, size }); // Store enemy object
     }
 }
@@ -87,8 +88,13 @@ function clearEnemy(x, y) {
         ) {
             console.log(`Removing enemy at: ${enemy.x}, ${enemy.y}`);
             enemies.splice(i, 1); // Remove the enemy from the array
+            if(enemies.length==0){
+                init();
+            }
             update(); // Refresh the canvas after removal
             break; // Stop after removing one enemy (optional)
+
+         
         }
     }
 }
