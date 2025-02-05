@@ -5,7 +5,7 @@ This is the Basic Topdown Shooter game.
 
 
 Eventually I want to add the following:
--	Enemies
+-	~~Enemies~~
 -	Obstacles
 -	Scoring
 -	Lives
