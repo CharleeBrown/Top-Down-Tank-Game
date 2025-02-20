@@ -1,7 +1,8 @@
 let c = document.getElementById("mainCanvas");
 let ctx = c.getContext("2d");
 let size = 10;
-
+let startingScore = 0;
+let nextScore = document.getElementById("scoreShow");
 let params = { x: c.width / 2, y: c.height / 2, size };
 let projectParams = { x: params.x, y: params.y, size: 5, active: false };
 let delta = 5; // Movement speed
@@ -25,7 +26,7 @@ function update() {
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
     ctx.strokeRect(params.x, params.y, params.size, params.size);
-
+    nextScore.innerText = startingScore;
     // Draw enemies
     drawEnemies();
 
@@ -68,7 +69,7 @@ function drawEnemies() {
     ctx.strokeStyle = "black";
     ctx.lineWidth = 3;
     ctx.fillStyle = "purple";
-
+    startingScore == 0;
     for (let enemy of enemies) {
         ctx.fillRect(enemy.x, enemy.y, enemy.size, enemy.size);
         ctx.strokeRect(enemy.x, enemy.y, enemy.size, enemy.size);
@@ -87,6 +88,7 @@ function clearEnemy(x, y) {
             y >= enemy.y && y <= enemy.y + enemy.size
         ) {
             console.log(`Removing enemy at: ${enemy.x}, ${enemy.y}`);
+            startingScore+=1;
             enemies.splice(i, 1); // Remove the enemy from the array
             if(enemies.length==0){
                 init();
